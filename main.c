@@ -51,9 +51,15 @@ struct rollno rool[5]={
 };
 struct year place[5]=
 {{"rishik",16},{"ravi",7},{"koushik",18},{"gitesh",6},{"Sujith",20}};
-printf("---------------------------------------------------------\n");
-printf("|\t\t\t\t\t\t\t|\n|   ----GURUNANAK INSTITUTIONS TECHNICAL CAMPUS----\t|\n|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|faculty login:\t\t\t\t\t\t|\n|Student login:\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Press '1' for faculty login!\t\t\t\t|\n|press '2' for student login!\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n");
-printf("---------------------------------------------------------\n");
+printf("-----------------------------------------\n");
+printf("|     ---GURU NANAK INSTITUTION---       |\n");
+printf("|           TECHNICAL CAMPUS             |\n");
+printf("|                                        |\n");
+printf("|                                        |\n");
+printf("|                                        |\n");
+printf("|      Enter 1 for faculty login         |\n");
+printf("|      Enter 2 for student login         |\n");
+printf("-----------------------------------------\n");
 scanf("%d",&choice);
 if(choice==1)
 {
