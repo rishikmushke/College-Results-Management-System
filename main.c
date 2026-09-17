@@ -57,23 +57,34 @@ printf("|           TECHNICAL CAMPUS             |\n");
 printf("|                                        |\n");
 printf("|                                        |\n");
 printf("|                                        |\n");
-printf("|      Enter 1 for faculty login         |\n");
-printf("|      Enter 2 for student login         |\n");
+printf("|                                        |\n");
+printf("|                                        |\n");
 printf("-----------------------------------------\n");
+printf("ENTER 1 FOR FACULTY LOGIN:\n");
+printf("ENTER 2 FOR FACULTY LOGIN:\n");
+printf("ENTER YOUR CHOICE:\n");
 scanf("%d",&choice);
+if(choice!= 1&&2)
+{
+printf("---WRONG CHOICE---\nTRY AGAIN!!!");
+}
 if(choice==1)
 {
+printf("---ENTER YOUR DETAILS---\n");
 printf("USERNAME:\n");
+scanf("%s",&fac_username);
 printf("PASSWORD:\n");
-scanf("%s\n%s",&fac_username,fac_password);
+scanf("%s",&fac_password);
 for(i=0;i<5;i++)
 {
 if(strcmp(fac_username,no[i].username)==0&&strcmp(fac_password,no[i].password)==0)
 {
 printf("---WELCOME---\n\nNAME:%s\nBRANCH:%s\n",no[i].name,no[i].dept);
+do
+{
 printf("--- FACULTY DASHBOARD ---\n1. STUDENT DETAILS\n2.INTERNAL MARKS\n3. NOTIFICATION \n4. LOGOUT\n");
 printf("ENTER Your Choice:\n");
-scanf("%d",&sch);}}
+scanf("%d",&sch);
 switch(sch)
 {
 case 1:
@@ -83,21 +94,21 @@ for(i=0;i<5;i++)
 printf("\nNAME:%s\nROLLNO:%s\nBRANCH:%s\n",rool[i].name,rool[i].htno,rool[i].branch);
 }break;
 case 2:
-printf("Enter the inter details:1 or 2\n");
+printf("Enter the internal details:1 or 2\n");
 scanf("%d",&internal);
 if(internal==1)
 {
 printf("---Internal marks 1---\n");
 for(i=0;i<5;i++)
 {
-printf("NAME:%s\nBRANCH:%sMARKS:%d\n",rool[i].name,rool[i].branch,rool[i].int_marks1);
+printf("\nNAME:%s\nBRANCH:%s\nMARKS:%d\n",rool[i].name,rool[i].branch,rool[i].int_marks1);
 }}
 else if(internal==2)
 {
 printf("---INTERNAL MARKS 2---\n");
 for(i=0;i<5;i++)
 {
-printf("NAME:%s\nBRANCH:%s\nMARKS=%d\n",rool[i].name,rool[i].branch,rool[i].int_marks2);
+printf("\nNAME:%s\nBRANCH:%s\nMARKS=%d\n",rool[i].name,rool[i].branch,rool[i].int_marks2);
 }}break;
 case 3:
 printf("---NOTIFICATION---\n");
@@ -107,20 +118,26 @@ case 4:
 exit(0);
 default:
 printf("--WRONG CREDENTIALS!!\n");
+break;}}while(1);}
+else 
+printf("---WRONG USERNAME (OR) PASSWORD---\n");
 break;}}
 else if(choice==2)
 {
 printf("USERNAME:\n");
+scanf("%s",&username);
 printf("PASSWORD:\n");
-scanf("%s\n%s",&username,password);
+scanf("%s",&password);
 for(i=0;i<5;i++)
 {
 if(strcmp(username,rool[i].username)==0&&strcmp(password,rool[i].password)==0)
 {
 printf("---WELCOME---\nRollno: %s\nNAME: %s\nBRANCH: %s\n",rool[i].htno,rool[i].name,rool[i].branch);
+do
+{
 printf("\n\n---DASHBOARD---\n1.ACADEMICS:\n2.EXAMINATION CELL:\n3.LIBRARY:\n4.PLACEMENTS:\n5.NOTIFICATION:\n6.Exit\n");
 printf("Enter your choice:\n");
-scanf("%d",&sch);}}
+scanf("%d",&sch);
 switch(sch)
 {
  case 1:
@@ -181,8 +198,12 @@ break;
 case 6:
 exit(0);
 default:
-printf("WRONG CREDENTIALS!!!");
+printf("---WRONG SLECTION---\n");
 }
+}while(1);
 }
+else
+printf("--WRONG USERNAME (OR) PASSWORD--\n");
+break;}}
 return 0;
 }
